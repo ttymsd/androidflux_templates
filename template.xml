@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<template
+  name="State, Reducer, ActionCreator for AndroidFlux"
+  description="make kotlin classes for AndroidFlux boiler classes"
+  minApi="9"
+  minBuildApi="14"
+  requireAppTheme="true"
+  revision="6"
+  format="5">
+
+  <dependency name="android-support-v4" revision="8" />
+
+  <category value="archtectures"/>
+  <formfactor value="Mobile"/>
+
+  <parameter
+    name="ApplicationId"
+    constraints="package"
+    suggest="${packageName}"
+    default=""
+    id="applicationId"
+    type="string"/>
+
+  <parameter
+    name="BaseReducer"
+    constraints="class|nonempty"
+    default="Reducer"
+    id="baseReducer"
+    type="string"/>
+
+  <parameter
+    name="ActionType"
+    constraints="activity|nonempty"
+    id="actionType"
+    type="string"/>
+
+  <parameter
+    name="Screen Name"
+    constraints="unique|nonempty"
+    default="Hoge"
+    id="screenName"
+    type="string"/>
+
+  <globals file="globals.xml.ftl"/>
+  <execute file="recipe.xml.ftl"/>
+
+</template>
